@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Primer Despliegue en Vercel</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #f8fafc;
+      padding: 20px;
+    }
+
+    .tarjeta {
+      background-color: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      padding: 40px 30px;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+    }
+
+    .etiqueta {
+      display: inline-block;
+      background-color: rgba(56, 189, 248, 0.15);
+      color: #38bdf8;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+      letter-spacing: 0.5px;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    p {
+      color: #cbd5e1;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      font-size: 0.98rem;
+    }
+
+    button {
+      background-color: #38bdf8;
+      color: #0f172a;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.15s ease, background-color 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #7dd3fc;
+      transform: translateY(-2px);
+    }
+
+    #estado {
+      margin-top: 18px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #4ade80;
+      min-height: 22px;
+    }
+
+    footer {
+      margin-top: 28px;
+      padding-top: 16px;
+      border-top: 1px solid #334155;
+      font-size: 0.82rem;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="tarjeta">
+    <span class="etiqueta">SD1 · Despliegue Web</span>
+    <h1>¡Hola, mundo desde Vercel!</h1>
+    <p>
+      Esta página fue creada de forma local con HTML, CSS y JavaScript, y publicada en la nube para ser accesible desde cualquier navegador.
+    </p>
+
+    <button id="btnProbar">Verificar despliegue</button>
+    <div id="estado"></div>
+
+    <footer>
+      Desarrollado por: <strong>Joselin de la Cruz Meraz</strong>
+    </footer>
+  </main>
+
+  <script>
+    const boton = document.getElementById('btnProbar');
+    const estado = document.getElementById('estado');
+
+    boton.addEventListener('click', () => {
+      const ahora = new Date().toLocaleTimeString('es-MX');
+      estado.textContent = `✓ Conexión activa en el servidor (${ahora})`;
+    });
+  </script>
+
+</body>
+</html>
